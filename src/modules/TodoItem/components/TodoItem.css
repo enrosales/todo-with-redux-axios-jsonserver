@@ -1,0 +1,13 @@
+.todoItem {
+  display: flex;
+  flex-direction: row;
+  display: inline;
+}
+
+.todoItem p {
+  display: inline;
+}
+
+.todoItem input {
+  display: inline;
+}
