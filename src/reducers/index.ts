@@ -4,5 +4,6 @@ import filterReducer from './filterReducer';
 
 export default combineReducers({
   todos: todosReducer,
+  todosFiltered: todosReducer,
   filter: filterReducer,
 });

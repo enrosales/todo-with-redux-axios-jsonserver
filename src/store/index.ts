@@ -7,6 +7,8 @@ const initialState = {};
 const composeEnhancers =
   (window && (window as any).__REDUX_DEVTOOLS_EXTENSION_COMPOSE__) || compose;
 
+export type AppState = ReturnType<typeof rootReducer>;
+
 export default createStore(
   rootReducer,
   initialState,
