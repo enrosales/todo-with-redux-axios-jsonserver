@@ -3,9 +3,9 @@ import { connect } from 'react-redux';
 //CSS
 import './TodoItem.css';
 //Props Types
-import { Props, Todo } from '../types';
+import { Props, Todo } from './types';
 //Actions
-import { updateTodo, deleteTodo } from '../../../actions/todosAction';
+import { updateTodo, deleteTodo } from '../../actions/todoAction';
 
 export function TodoItem(props: Props) {
   const { id, text, done } = props.todo;

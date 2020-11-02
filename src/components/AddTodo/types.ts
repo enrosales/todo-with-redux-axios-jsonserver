@@ -1,6 +1,6 @@
 import { Todo } from '../TodoItem/types';
+import { Dispatch } from 'redux';
 
 export type Props = {
-  todos: Todo[];
-  addTodo: (todos: Todo[], todo: Todo) => void;
+  addTodo: (todo: Todo) => (dispatch: Dispatch<any>) => Promise<void>;
 };

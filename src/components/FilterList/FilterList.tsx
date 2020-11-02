@@ -3,13 +3,13 @@ import { connect } from 'react-redux';
 //Types
 import { Props } from './types';
 //Constants
-import { Filter } from '../../../constants/filters';
+import { Filter } from '../../constants/filters';
 //Actions
 import {
   showAll,
   showComplete,
   showIncomplete,
-} from '../../../actions/filterActions';
+} from '../../actions/filterActions';
 
 function FilterList(props: Props) {
   const { showAll, showComplete, showIncomplete } = props;

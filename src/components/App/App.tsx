@@ -1,35 +1,11 @@
-import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
 //Components
-import AddTodo from '../../AddTodo/components';
-import TodoList from '../../TodoList/components';
-import FilterList from '../../FilterList/components';
+import AppLayout from '../App/AppLayout';
 //Actions
-import { getTodos } from '../../../actions/todosAction';
+import { getTodos } from '../../actions/todoAction';
 
-type Props = {
-  getTodos: () => void;
-};
+const mapDispatchToProps = (dispatch: any) => ({
+  getTodos: () => dispatch(getTodos()),
+});
 
-function App(props: Props) {
-  const { getTodos } = props;
-  useEffect(() => {
-    const loadData = async () => {
-      await getTodos();
-    };
-    loadData();
-  }, []);
-  return (
-    <>
-      <AddTodo />
-      <TodoList />
-      <FilterList />
-    </>
-  );
-}
-
-const mapDispatchToProps = {
-  getTodos,
-};
-
-export default connect(null, mapDispatchToProps)(App);
+export default connect(null, mapDispatchToProps)(AppLayout);

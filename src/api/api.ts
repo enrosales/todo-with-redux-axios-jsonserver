@@ -1,6 +1,6 @@
 import axios, { AxiosInstance, AxiosResponse } from 'axios';
 import { API_URL } from '../constants/api';
-import { Todo } from '../modules/TodoItem/types';
+import { Todo } from '../components/TodoItem/types';
 
 const api: AxiosInstance = axios.create({
   baseURL: API_URL,

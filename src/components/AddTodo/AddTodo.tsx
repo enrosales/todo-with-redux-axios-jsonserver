@@ -1,14 +1,15 @@
 import React, { useState, ChangeEvent } from 'react';
 import { connect } from 'react-redux';
 //Types
-import { Props } from '../types';
-import { Todo } from '../../TodoItem/types';
+import { Props } from './types';
+import { Todo } from '../TodoItem/types';
 //Actions
-import { addTodo } from '../../../actions/todosAction';
+import { addTodo } from '../../actions/todoAction';
+import { AppState } from '../../store';
 
-function AddTodo(props: Props) {
+function AddTodo(props: any) {
   const [text, setText] = useState('');
-  const { addTodo, todos } = props;
+  const { addTodo } = props;
 
   const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
     setText(e.target.value);
@@ -23,7 +24,7 @@ function AddTodo(props: Props) {
           done: false,
           text,
         };
-        addTodo(todos, newTodo);
+        addTodo(newTodo);
       }
       setText('');
       resolve();
@@ -44,12 +45,8 @@ function AddTodo(props: Props) {
   );
 }
 
-const mapStateToProps = (state: any) => ({
-  todos: state.todos,
-});
-
 const mapDispatchToProps = {
   addTodo,
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(AddTodo);
+export default connect(null, mapDispatchToProps)(AddTodo);

@@ -1,9 +1,10 @@
 import React from 'react';
 import { connect } from 'react-redux';
 //Types
-import { Props } from '../types';
+import { Props } from './types';
 //Components
-import TodoItem from '../../TodoItem/components';
+import TodoItem from '../TodoItem/TodoItem';
+import { AppState } from '../../store';
 
 export function TodoList(props: Props) {
   const { todos } = props;
@@ -24,7 +25,7 @@ export function TodoList(props: Props) {
   );
 }
 
-const mapStateToProps = (state: any) => ({
+const mapStateToProps = (state: AppState) => ({
   todos: state.todos,
 });
 
