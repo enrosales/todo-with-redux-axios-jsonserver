@@ -50,7 +50,7 @@ export type DeleteTodo = {
 
 export type TodoDeleted = {
   type: TodosActions.TODO_DELETED;
-  payload: Todo;
+  payload: number;
 };
 
 export type ErrorDeletingTodo = {

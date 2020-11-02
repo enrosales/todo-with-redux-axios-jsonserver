@@ -23,8 +23,8 @@ export default function (state = initialState, action: any) {
       }
       return state;
     case TodosActions.TODO_DELETED:
-      const todoDeleted = action.payload;
-      return state.filter(t => t.id !== todoDeleted);
+      const todoDeletedId = action.payload;
+      return state.filter(t => t.id !== todoDeletedId);
     default:
       return state;
   }

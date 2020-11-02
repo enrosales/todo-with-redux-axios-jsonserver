@@ -72,9 +72,9 @@ export const deleteTodoAction = (): DeleteTodo => ({
   type: TodosActions.DELETE_TODO,
 });
 
-export const todoDeletedAction = (todo: Todo): TodoDeleted => ({
+export const todoDeletedAction = (todoId: number): TodoDeleted => ({
   type: TodosActions.TODO_DELETED,
-  payload: todo,
+  payload: todoId,
 });
 
 export const errorDeletingTodoAction = (error: string): ErrorDeletingTodo => ({
@@ -123,9 +123,10 @@ export const deleteTodo = (todoId: number) => async (
   dispatch: any
 ): Promise<void> => {
   try {
+    console.log('todoId', todoId);
     dispatch(deleteTodoAction());
-    const { data: todo } = await API.deleteTodo(todoId);
-    dispatch(todoDeletedAction(todo));
+    await API.deleteTodo(todoId);
+    dispatch(todoDeletedAction(todoId));
   } catch (error) {
     dispatch(errorDeletingTodoAction(error.message));
   }

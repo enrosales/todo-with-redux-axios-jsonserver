@@ -1,9 +1,9 @@
 import React from 'react';
 import { connect } from 'react-redux';
-//Types
-import { Props } from './types';
 //Constants
 import { Filter } from '../../constants/filters';
+//Components
+import Filters from '../Filters';
 //Actions
 import {
   showAll,
@@ -11,21 +11,21 @@ import {
   showIncomplete,
 } from '../../actions/filterActions';
 
-function FilterList(props: Props) {
+function FilterList(props: any) {
   const { showAll, showComplete, showIncomplete } = props;
   return (
     <div>
-      <button onClick={showAll}>{Filter.SHOW_ALL}</button>
-      <button onClick={showComplete}>{Filter.SHOW_COMPLETE}</button>
-      <button onClick={showIncomplete}>{Filter.SHOW_INCOMPLETE}</button>
+      <Filters render={showAll}>{Filter.SHOW_ALL}</Filters>
+      <Filters render={showComplete}>{Filter.SHOW_COMPLETE}</Filters>
+      <Filters render={showIncomplete}>{Filter.SHOW_INCOMPLETE}</Filters>
     </div>
   );
 }
 
-const mapDispatchToProps = {
-  showAll,
-  showComplete,
-  showIncomplete,
-};
+const mapDispatchToProps = (dispatch: any) => ({
+  showAll: () => dispatch(showAll()),
+  showComplete: () => dispatch(showComplete()),
+  showIncomplete: () => dispatch(showIncomplete()),
+});
 
 export default connect(null, mapDispatchToProps)(FilterList);

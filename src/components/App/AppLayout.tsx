@@ -8,7 +8,7 @@ export default function AppLayout(props: any) {
   const { getTodos } = props;
   useEffect(() => {
     getTodos();
-  }, []);
+  }, [getTodos]);
   return (
     <>
       <AddTodo />
