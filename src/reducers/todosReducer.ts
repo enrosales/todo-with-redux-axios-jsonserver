@@ -22,12 +22,12 @@ export default function (state = initialState, action: any) {
         //Adding to items and filteredItems
         return {
           ...state,
-          items: state.items.push(newTodo),
-          filteredItems: state.filteredItems.push(newTodo),
+          items: state.items.concat(newTodo),
+          filteredItems: state.filteredItems.concat(newTodo),
         };
       }
       //Only added to the items
-      return { ...state, items: state.items.push(newTodo) };
+      return { ...state, items: state.items.concat(newTodo) };
     case TodosActions.TODO_UPDATED:
       const todoUpdated: Todo = action.payload;
       let items = [...state.items].map(t => {

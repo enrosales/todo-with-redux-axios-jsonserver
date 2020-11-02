@@ -26,7 +26,7 @@ export function TodoList(props: Props) {
 }
 
 const mapStateToProps = (state: AppState) => ({
-  todos: state.todosFiltered,
+  todos: state.todos.filteredItems,
 });
 
 const mapDispatchToProps = {};

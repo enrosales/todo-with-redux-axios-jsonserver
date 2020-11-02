@@ -22,7 +22,7 @@ function Filters(props: any) {
 }
 
 const mapStateToProps = (state: AppState) => ({
-  filter: state.filter,
+  filter: state.todos.filter,
 });
 
 export default connect(mapStateToProps, {})(Filters);

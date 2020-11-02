@@ -5,7 +5,6 @@ import { Props } from './types';
 import { Todo } from '../TodoItem/types';
 //Actions
 import { addTodo } from '../../actions/todoAction';
-import { AppState } from '../../store';
 
 function AddTodo(props: any) {
   const [text, setText] = useState('');
