@@ -1,5 +1,5 @@
 export enum Filter {
-  SHOW_ALL = 'Show All',
-  SHOW_COMPLETE = 'Show Complete',
-  SHOW_INCOMPLETE = 'Show Incomplete',
+  SHOW_ALL = 'SHOW_ALL',
+  SHOW_COMPLETE = 'SHOW_COMPLETE',
+  SHOW_INCOMPLETE = 'SHOW_INCOMPLETE',
 }
