@@ -123,7 +123,6 @@ export const deleteTodo = (todoId: number) => async (
   dispatch: any
 ): Promise<void> => {
   try {
-    console.log('todoId', todoId);
     dispatch(deleteTodoAction());
     await API.deleteTodo(todoId);
     dispatch(todoDeletedAction(todoId));
