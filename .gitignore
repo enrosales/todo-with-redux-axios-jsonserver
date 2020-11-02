@@ -8,6 +8,12 @@
 # testing
 /coverage
 
+#debug.log
+debug.log
+
+#db.json
+/src/assets/db.json
+
 # production
 /build
 
