@@ -16,7 +16,6 @@ export const showComplete = () => (dispatch: any): void => {
 };
 
 export const showIncomplete = () => (dispatch: any): void => {
-  console.log('entro aqui');
   return dispatch({
     type: FilterActions.SET_SHOW_INCOMPLETE_FILTER,
     payload: Filter.SHOW_INCOMPLETE,
