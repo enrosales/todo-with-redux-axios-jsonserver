@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 //Components
-import AppLayout from '../App/AppLayout';
+import AppLayout from './AppLayout';
 //Actions
 import { getTodos } from '../../actions/todoAction';
 
